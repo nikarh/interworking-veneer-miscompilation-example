@@ -1,4 +1,4 @@
-arm-vita-eabi.gcc := $(shell which arm-vita-eabi-gcc 2> /dev/null)
+arm-vita-eabi-gcc := $(shell which arm-vita-eabi-gcc 2> /dev/null)
 
 ifeq ($(arm-vita-eabi-gcc),)
   arm-vita-eabi-gcc := docker run --platform linux/amd64 -v "$(CURDIR):/test" --user "$(shell id -u):$(shell id -g)" -w /test --rm vitasdk/vitasdk arm-vita-eabi-gcc
